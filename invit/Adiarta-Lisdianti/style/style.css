@@ -190,10 +190,10 @@ body {
   display: none;
   border: 0;
   z-index: 100;
-  background: url(../gbr/audio-on.png) center no-repeat;
+  background: url(../gbr/audio-on.svg) center no-repeat;
 }
 .audio-icon.off {
-  background: url(../gbr/audio-off.png) center no-repeat;
+  background: url(../gbr/audio-off.svg) center no-repeat;
 }
 .full-container .quotes {
   background: url(../gbr/bg-2.png) #f1efef;
