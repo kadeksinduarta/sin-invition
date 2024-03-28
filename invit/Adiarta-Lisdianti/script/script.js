@@ -75,11 +75,3 @@ simplyCountdown(".simply-countdown", {
     seconds: { singular: "Detik", plural: "Detik" },
   },
 });
-
-// menampilkan ucapan
-const nama = document.querySelector("input[name=nama]").value;
-const ucapan = document.querySelector("textarea[name=ucapan]").value;
-
-// Menampilkan nilai nama dan ucapan di bagian bawah form
-outputDiv.innerHTML = "<p>Nama: " + nama + "</p><p>Ucapan: " + ucapan + "</p>";
-form.appendChild(outputDiv);
