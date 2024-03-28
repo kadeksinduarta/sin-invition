@@ -148,6 +148,9 @@ body {
   margin: 40px 0;
   overflow: visible;
 }
+.full-container .foto-mempelai .dan {
+  display: none;
+}
 .full-container .foto-mempelai .nama {
   padding: 20px;
   font-size: 2rem;
@@ -503,6 +506,15 @@ body {
   }
   .full-container .foto-mempelai .nama {
     padding: 10px;
+  }
+  .full-container .foto-mempelai .dan {
+    display: block;
+    padding: 20px 0;
+    font-size: 40px;
+  }
+  .full-container .foto-mempelai .dan p {
+    font-size: 30px;
+    letter-spacing: 10px;
   }
   .full-container .pengantin p:nth-child(2) {
     width: 90%;
