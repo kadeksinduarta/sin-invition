@@ -1,16 +1,43 @@
-const musicBackground = document.getElementById("musicBackground");
-const audioIcon = document.querySelector(".audio-icon");
-let isPlaying = false;
+// Global variables
+var isPlaying = false;
+var isFirstLoaded = true;
 
-// Enable scrolling
-function enabledScroll() {
-  document.body.style.overflowY = "auto";
-  musicBackground.play();
-  isPlaying = true;
-  audioIcon.style.display = "block";
+// Run all the function when first loaded
+jQuery(document).ready(function () {
+  scrollTopOnFirstLoaded();
+  runTextAnimation();
+  autoplaySlider();
+  enableScroll();
+  toggleAudio();
+  runCountDown();
+  showGuestName();
+  submitFormToGoogleSheet();
+  getGoogleSheet();
+});
+
+// Get google sheet data
+function getGoogleSheet() {
+  // Define the URL of your Google Apps Script
+
+  // Make an AJAX request to fetch data from the Google Apps Script URL
+  var scriptUrl = "https://script.google.com/macros/s/AKfycbxq3Vx9YRoldcelCay8D12EEdKpSZB_NWBFK5fdwaj5j9whr8w7J8c03wGDOO54h-U/exec";
+
+  $.getJSON(scriptUrl, function (result) {
+    console.log(result);
+  });
 }
 
-jQuery(document).ready(function () {
+// Scroll top on first loaded
+function scrollTopOnFirstLoaded() {
+  if (isFirstLoaded) {
+    jQuery('html, body').animate({
+      scrollTop: jQuery(".halaman-utama").offset().top
+    }, 0);
+  }
+}
+
+// Autolay slider
+function autoplaySlider() {
   jQuery(".sliders").slick({
     infinite: true,
     speed: 500,
@@ -18,23 +45,62 @@ jQuery(document).ready(function () {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 4000,
     arrows: false,
   });
-});
-
-// Audio
-function toggleAudio() {
-  if (isPlaying) {
-    musicBackground.pause();
-    audioIcon.classList.add("off");
-  } else {
-    musicBackground.play();
-    audioIcon.classList.remove("off");
-  }
-
-  isPlaying = !isPlaying;
 }
+
+// Enable scroll functionality
+function enableScroll() {
+  jQuery('#enable-scroll').on('click', function (e) {
+    e.preventDefault();
+    jQuery('body').css('overflow-y', 'auto');
+    jQuery('#musicBackground')[0].play();
+    isPlaying = true;
+    jQuery('.audio-icon').css('display', 'block');
+
+    jQuery('html, body').animate({
+      scrollTop: $("#invitation").offset().top
+    }, 1000);
+
+    isFirstLoaded = false;
+  })
+}
+
+// Toggle Audio functionality
+function toggleAudio() {
+  jQuery('#toggle-audio').on('click', function () {
+    if (isPlaying) {
+      jQuery('#musicBackground')[0].pause();
+      jQuery('.audio-icon').addClass("off");
+    } else {
+      jQuery('#musicBackground')[0].play();
+      jQuery('.audio-icon').removeClass("off");
+    }
+
+    isPlaying = !isPlaying;
+  });
+}
+
+// countdown
+function runCountDown() {
+  simplyCountdown(".simply-countdown", {
+    year: 2024, // required
+    month: 4, // required
+    day: 11, // required
+    hours: 9, // Default is 0 [0-23] integer
+    minutes: 0, // Default is 0 [0-59] integer
+    seconds: 0, // Default is 0 [0-59] integer
+    words: {
+      //words displayed into the countdown
+      days: { singular: "Hari", plural: "Hari" },
+      hours: { singular: "Jam", plural: "Jam" },
+      minutes: { singular: "Menit", plural: "Menit" },
+      seconds: { singular: "Detik", plural: "Detik" },
+    },
+  });
+}
+
 
 // Get guest name
 function getGuestName(name, url) {
@@ -57,21 +123,31 @@ function showGuestName() {
     hasilElement.textContent = "-";
   }
 }
-window.onload = showGuestName;
 
-// countdown
-simplyCountdown(".simply-countdown", {
-  year: 2024, // required
-  month: 4, // required
-  day: 11, // required
-  hours: 9, // Default is 0 [0-23] integer
-  minutes: 0, // Default is 0 [0-59] integer
-  seconds: 0, // Default is 0 [0-59] integer
-  words: {
-    //words displayed into the countdown
-    days: { singular: "Hari", plural: "Hari" },
-    hours: { singular: "Jam", plural: "Jam" },
-    minutes: { singular: "Menit", plural: "Menit" },
-    seconds: { singular: "Detik", plural: "Detik" },
-  },
-});
+// Run text animation 
+function runTextAnimation() {
+  AOS.init();
+}
+
+// Submit form to google sheet functionality
+function submitFormToGoogleSheet() {
+  jQuery("#form-guest").submit(function (e) {
+    e.preventDefault();
+    var formData = new FormData(jQuery(this)[0]);
+    var action = jQuery(this).attr("action");
+    jQuery('#submit-button').text('Sedang Mengirim....')
+    jQuery.ajax({
+      url: action,
+      type: "POST",
+      data: formData,
+      processData: false,
+      contentType: false,
+      success: function () {
+        jQuery("#submit-button").text('Kirim Ucapan');
+        alert("Terimakasih, konfirmasi kehadiran Anda sudah terkirim :)");
+        jQuery("input[name=nama]").val('');
+        jQuery("textarea[name=ucapan]").val('');
+      },
+    });
+  });
+}
