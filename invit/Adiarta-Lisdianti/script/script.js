@@ -17,13 +17,26 @@ jQuery(document).ready(function () {
 
 // Get google sheet data
 function getGoogleSheet() {
-  // Define the URL of your Google Apps Script
+  // Make an AJAX request to fetch data from AWS Lambda
+  var scriptUrl = "https://yzoope2yp2uhjv4ongn2xhc6ny0nibdo.lambda-url.us-east-1.on.aws/";
 
-  // Make an AJAX request to fetch data from the Google Apps Script URL
-  var scriptUrl = "https://script.google.com/macros/s/AKfycbxq3Vx9YRoldcelCay8D12EEdKpSZB_NWBFK5fdwaj5j9whr8w7J8c03wGDOO54h-U/exec";
+  jQuery.getJSON(scriptUrl, function (result) {
+    console.log('Ucapan: ', result.data);
+    
+    jQuery("#list-ucapan-items").empty();
 
-  $.getJSON(scriptUrl, function (result) {
-    console.log(result);
+    jQuery.each(result.data, function (index, item) {
+      var listItem = jQuery("<li>");
+      var nameSpan = jQuery("<span id='nama'>").text(item.nama);
+      var tglSpan = jQuery("<span id='tanggal'>").text(' - ' + formatDateToIndonesian(item.tanggal));
+      var messagePara = jQuery("<p id='pesan'>").text(item.ucapan);
+
+      listItem.append(nameSpan);
+      listItem.append(tglSpan);
+      listItem.append(messagePara);
+
+      jQuery("#list-ucapan-items").append(listItem);
+    });
   });
 }
 
@@ -147,7 +160,22 @@ function submitFormToGoogleSheet() {
         alert("Terimakasih, konfirmasi kehadiran Anda sudah terkirim :)");
         jQuery("input[name=nama]").val('');
         jQuery("textarea[name=ucapan]").val('');
+        getGoogleSheet();
       },
     });
   });
+}
+
+function formatDateToIndonesian(dateString) {
+  var parts = dateString.split('/');
+  var day = parseInt(parts[0], 10);
+  var month = parseInt(parts[1], 10);
+  var year = parseInt(parts[2], 10);
+
+  var months = [
+    "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+    "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+  ];
+
+  return day + " " + months[month - 1] + " " + year;
 }
