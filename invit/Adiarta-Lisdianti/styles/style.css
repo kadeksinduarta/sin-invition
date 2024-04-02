@@ -114,13 +114,14 @@ body {
 }
 
 .full-container .halaman-utama button {
-  padding: 10px 35px;
+  padding: 15px 45px;
   border-radius: 10px;
   border: none;
   margin-top: 20px;
   background-color: var(--bg-button);
   cursor: pointer;
   color: #fff;
+  font-size: 18px;
 }
 
 .full-container p.bold {
@@ -528,25 +529,24 @@ body {
 }
 
 .full-container footer {
-  background-color: #1daafe;
+  background-color: #f1efef;
   text-align: center;
   margin-top: -13px;
   padding-bottom: 20px;
+  color: #000;
 }
 
 .full-container footer h3 {
-  color: #fff;
   margin-bottom: 30px;
 }
 
 .full-container footer p {
-  color: #fff;
   margin-bottom: 30px;
 }
 
 .full-container footer a {
   text-decoration: none;
-  color: #fff;
+  color: #000;
 }
 
 @media (max-width: 960px) {
