@@ -532,14 +532,19 @@ body {
   padding-bottom: 20px;
 }
 
-.full-container footer h2 {
+.full-container footer h3 {
   color: #fff;
   margin-bottom: 30px;
 }
 
 .full-container footer p {
   color: #fff;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
+}
+
+.full-container footer a {
+  text-decoration: none;
+  color: #fff;
 }
 
 @media (max-width: 960px) {
