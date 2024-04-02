@@ -21,14 +21,14 @@ function getGoogleSheet() {
   var scriptUrl = "https://yzoope2yp2uhjv4ongn2xhc6ny0nibdo.lambda-url.us-east-1.on.aws/";
 
   jQuery.getJSON(scriptUrl, function (result) {
-    console.log('Ucapan: ', result.data);
-    
+    console.log("Ucapan: ", result.data);
+
     jQuery("#list-ucapan-items").empty();
 
     jQuery.each(result.data, function (index, item) {
       var listItem = jQuery("<li>");
       var nameSpan = jQuery("<span id='nama'>").text(item.nama);
-      var tglSpan = jQuery("<span id='tanggal'>").text(' - ' + formatDateToIndonesian(item.tanggal));
+      var tglSpan = jQuery("<span id='tanggal'>").text(" - " + formatDateToIndonesian(item.tanggal));
       var messagePara = jQuery("<p id='pesan'>").text(item.ucapan);
 
       listItem.append(nameSpan);
@@ -43,9 +43,12 @@ function getGoogleSheet() {
 // Scroll top on first loaded
 function scrollTopOnFirstLoaded() {
   if (isFirstLoaded) {
-    jQuery('html, body').animate({
-      scrollTop: jQuery(".halaman-utama").offset().top
-    }, 0);
+    jQuery("html, body").animate(
+      {
+        scrollTop: jQuery(".halaman-utama").offset().top,
+      },
+      0
+    );
   }
 }
 
@@ -65,30 +68,33 @@ function autoplaySlider() {
 
 // Enable scroll functionality
 function enableScroll() {
-  jQuery('#enable-scroll').on('click', function (e) {
+  jQuery("#enable-scroll").on("click", function (e) {
     e.preventDefault();
-    jQuery('body').css('overflow-y', 'auto');
-    jQuery('#musicBackground')[0].play();
+    jQuery("body").css("overflow-y", "auto");
+    jQuery("#musicBackground")[0].play();
     isPlaying = true;
-    jQuery('.audio-icon').css('display', 'block');
+    jQuery(".audio-icon").css("display", "block");
 
-    jQuery('html, body').animate({
-      scrollTop: $("#invitation").offset().top
-    }, 1000);
+    jQuery("html, body").animate(
+      {
+        scrollTop: $("#invitation").offset().top,
+      },
+      1000
+    );
 
     isFirstLoaded = false;
-  })
+  });
 }
 
 // Toggle Audio functionality
 function toggleAudio() {
-  jQuery('#toggle-audio').on('click', function () {
+  jQuery("#toggle-audio").on("click", function () {
     if (isPlaying) {
-      jQuery('#musicBackground')[0].pause();
-      jQuery('.audio-icon').addClass("off");
+      jQuery("#musicBackground")[0].pause();
+      jQuery(".audio-icon").addClass("off");
     } else {
-      jQuery('#musicBackground')[0].play();
-      jQuery('.audio-icon').removeClass("off");
+      jQuery("#musicBackground")[0].play();
+      jQuery(".audio-icon").removeClass("off");
     }
 
     isPlaying = !isPlaying;
@@ -114,12 +120,11 @@ function runCountDown() {
   });
 }
 
-
 // Get guest name
 function getGuestName(name, url) {
   if (!url) url = window.location.href;
   name = name.replace(/[\[\]]/g, "\\$&");
-  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+  var regex = new RegExp("[?&]" + name + "(=([^#]*)|&|#|$)"),
     results = regex.exec(url);
   if (!results) return null;
   if (!results[2]) return "";
@@ -137,7 +142,7 @@ function showGuestName() {
   }
 }
 
-// Run text animation 
+// Run text animation
 function runTextAnimation() {
   AOS.init();
 }
@@ -148,7 +153,7 @@ function submitFormToGoogleSheet() {
     e.preventDefault();
     var formData = new FormData(jQuery(this)[0]);
     var action = jQuery(this).attr("action");
-    jQuery('#submit-button').text('Sedang Mengirim....')
+    jQuery("#submit-button").text("Sedang Mengirim....");
     jQuery.ajax({
       url: action,
       type: "POST",
@@ -156,10 +161,10 @@ function submitFormToGoogleSheet() {
       processData: false,
       contentType: false,
       success: function () {
-        jQuery("#submit-button").text('Kirim Ucapan');
+        jQuery("#submit-button").text("Kirim Ucapan");
         alert("Terimakasih, konfirmasi kehadiran Anda sudah terkirim :)");
-        jQuery("input[name=nama]").val('');
-        jQuery("textarea[name=ucapan]").val('');
+        jQuery("input[name=nama]").val("");
+        jQuery("textarea[name=ucapan]").val("");
         getGoogleSheet();
       },
     });
@@ -167,15 +172,12 @@ function submitFormToGoogleSheet() {
 }
 
 function formatDateToIndonesian(dateString) {
-  var parts = dateString.split('/');
+  var parts = dateString.split("/");
   var day = parseInt(parts[0], 10);
   var month = parseInt(parts[1], 10);
   var year = parseInt(parts[2], 10);
 
-  var months = [
-    "Januari", "Februari", "Maret", "April", "Mei", "Juni",
-    "Juli", "Agustus", "September", "Oktober", "November", "Desember"
-  ];
+  var months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
 
   return day + " " + months[month - 1] + " " + year;
 }
