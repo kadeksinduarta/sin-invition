@@ -4,8 +4,8 @@ var isFirstLoaded = true;
 
 // Run all the function when first loaded
 jQuery(document).ready(function () {
-  scrollTopOnFirstLoaded();
   runTextAnimation();
+  scrollTopOnFirstLoaded();
   autoplaySlider();
   enableScroll();
   toggleAudio();
