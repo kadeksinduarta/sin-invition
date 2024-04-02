@@ -56,7 +56,7 @@ function enableScroll() {
       {
         scrollTop: $("#invitation").offset().top,
       },
-      100
+      1000
     );
 
     isFirstLoaded = false;

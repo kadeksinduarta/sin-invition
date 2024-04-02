@@ -532,7 +532,7 @@ body {
   background-color: #f1efef;
   text-align: center;
   margin-top: -13px;
-  padding-bottom: 20px;
+  padding: 0 20px 20px 20px;
   color: #000;
 }
 
