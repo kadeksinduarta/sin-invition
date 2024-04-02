@@ -45,7 +45,8 @@ body {
   background-position: center;
   color: #fff;
   text-align: center;
-  position: relative;
+  position: fixed;
+  z-index: 4;
 }
 
 .full-container .halaman-utama .slick-list,
