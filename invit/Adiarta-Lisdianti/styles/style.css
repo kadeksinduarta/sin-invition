@@ -10,6 +10,7 @@ html {
 
 body {
   overflow-y: hidden;
+  touch-action: none; /* Fix iOS */
 }
 
 :root {
@@ -45,8 +46,7 @@ body {
   background-position: center;
   color: #fff;
   text-align: center;
-  position: fixed;
-  z-index: 4;
+  position: relative;
 }
 
 .full-container .halaman-utama .slick-list,

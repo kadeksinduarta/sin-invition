@@ -47,7 +47,7 @@ function enableScroll() {
     e.preventDefault();
     jQuery("body").css("overflow-y", "auto");
     jQuery("html").css("overscroll-behavior-y", "auto");
-    jQuery(".halaman-utama").css("position", "relative");
+    jQuery("body").css("touch-action", "auto");
     jQuery("#musicBackground")[0].play();
     isPlaying = true;
     jQuery(".audio-icon").css("display", "block");
