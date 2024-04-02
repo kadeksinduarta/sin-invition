@@ -15,31 +15,6 @@ jQuery(document).ready(function () {
   getGoogleSheet();
 });
 
-// Get google sheet data
-function getGoogleSheet() {
-  // Make an AJAX request to fetch data from AWS Lambda
-  var scriptUrl = "https://yzoope2yp2uhjv4ongn2xhc6ny0nibdo.lambda-url.us-east-1.on.aws/";
-
-  jQuery.getJSON(scriptUrl, function (result) {
-    console.log("Ucapan: ", result.data);
-
-    jQuery("#list-ucapan-items").empty();
-
-    jQuery.each(result.data, function (index, item) {
-      var listItem = jQuery("<li>");
-      var nameSpan = jQuery("<span id='nama'>").text(item.nama);
-      var tglSpan = jQuery("<span id='tanggal'>").text(" - " + formatDateToIndonesian(item.tanggal));
-      var messagePara = jQuery("<p id='pesan'>").text(item.ucapan);
-
-      listItem.append(nameSpan);
-      listItem.append(tglSpan);
-      listItem.append(messagePara);
-
-      jQuery("#list-ucapan-items").append(listItem);
-    });
-  });
-}
-
 // Scroll top on first loaded
 function scrollTopOnFirstLoaded() {
   if (isFirstLoaded) {
@@ -71,6 +46,7 @@ function enableScroll() {
   jQuery("#enable-scroll").on("click", function (e) {
     e.preventDefault();
     jQuery("body").css("overflow-y", "auto");
+    jQuery("html").css("overscroll-behavior-y", "auto");
     jQuery("#musicBackground")[0].play();
     isPlaying = true;
     jQuery(".audio-icon").css("display", "block");
@@ -123,8 +99,8 @@ function runCountDown() {
 // Get guest name
 function getGuestName(name, url) {
   if (!url) url = window.location.href;
-  name = name.replace(/[\[\]]/g, "\\$&");
-  var regex = new RegExp("[?&]" + name + "(=([^#]*)|&|#|$)"),
+  name = name.replace(/[\[\]]/g, "\\$");
+  var regex = new RegExp("[?]" + name + "(=([^#]*)||#|$)"),
     results = regex.exec(url);
   if (!results) return null;
   if (!results[2]) return "";
@@ -145,6 +121,17 @@ function showGuestName() {
 // Run text animation
 function runTextAnimation() {
   AOS.init();
+}
+
+function formatDateToIndonesian(dateString) {
+  var parts = dateString.split("/");
+  var day = parseInt(parts[0], 10);
+  var month = parseInt(parts[1], 10);
+  var year = parseInt(parts[2], 10);
+
+  var months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+
+  return day + " " + months[month - 1] + " " + year;
 }
 
 // Submit form to google sheet functionality
@@ -171,13 +158,27 @@ function submitFormToGoogleSheet() {
   });
 }
 
-function formatDateToIndonesian(dateString) {
-  var parts = dateString.split("/");
-  var day = parseInt(parts[0], 10);
-  var month = parseInt(parts[1], 10);
-  var year = parseInt(parts[2], 10);
+// Get google sheet data
+function getGoogleSheet() {
+  // Make an AJAX request to fetch data from AWS Lambda
+  var scriptUrl = "https://yzoope2yp2uhjv4ongn2xhc6ny0nibdo.lambda-url.us-east-1.on.aws/";
 
-  var months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+  jQuery.getJSON(scriptUrl, function (result) {
+    console.log("Ucapan: ", result.data);
 
-  return day + " " + months[month - 1] + " " + year;
+    jQuery("#list-ucapan-items").empty();
+
+    jQuery.each(result.data, function (index, item) {
+      var listItem = jQuery("<li>");
+      var nameSpan = jQuery("<span id='nama'>").text(item.nama);
+      var tglSpan = jQuery("<span id='tanggal'>").text(" - " + formatDateToIndonesian(item.tanggal));
+      var messagePara = jQuery("<p id='pesan'>").text(item.ucapan);
+
+      listItem.append(nameSpan);
+      listItem.append(tglSpan);
+      listItem.append(messagePara);
+
+      jQuery("#list-ucapan-items").append(listItem);
+    });
+  });
 }

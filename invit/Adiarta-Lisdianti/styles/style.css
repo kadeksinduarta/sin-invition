@@ -1,12 +1,11 @@
-.full-container .halaman-utama h1,
-.full-container p.bold span {
-  font-family: var(--font-heandwriting);
-}
-
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+html {
+  overscroll-behavior-y: none;
 }
 
 body {
@@ -23,13 +22,18 @@ body {
   --all-font: "Roboto Serif", serif;
 }
 
+.full-container .halaman-utama h1,
+.full-container p.bold span {
+  font-family: var(--font-heandwriting);
+}
+
 .full-container {
   background-color: #fffbf9;
   width: 100%;
   height: auto;
   font-family: var(--all-font);
   font-weight: 300;
-  padding-bottom: 200px;
+  /* padding-bottom: 200px; */
   position: relative;
   overflow-x: hidden;
 }
@@ -75,7 +79,7 @@ body {
 .full-container .halaman-utama .masking {
   width: 100%;
   height: 100%;
-  background: rgb(0, 0, 0, .3);
+  background: rgb(0, 0, 0, 0.3);
   position: absolute;
   top: 0;
   left: 0;
@@ -519,6 +523,23 @@ body {
   color: #fff;
   font-weight: 400;
   font-style: normal;
+}
+
+.full-container footer {
+  background-color: #1daafe;
+  text-align: center;
+  margin-top: -13px;
+  padding-bottom: 20px;
+}
+
+.full-container footer h2 {
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.full-container footer p {
+  color: #fff;
+  margin-bottom: 10px;
 }
 
 @media (max-width: 960px) {
