@@ -22,7 +22,7 @@ body {
 nav {
   width: 100%;
   height: 80px;
-  /* background-color: #12d6fa; */
+  background-color: #12d6fa;
   display: flex;
   padding: 0 8%;
   justify-content: space-between;
@@ -51,12 +51,12 @@ nav ul li a {
   font-family: var(--font-paragraf);
   font-size: 1.05rem;
   font-weight: 400;
-  color: #000;
+  color: #fff;
 }
 
 nav ul li a:hover {
   font-weight: 500;
-  color: #fff;
+  color: #23616c;
 }
 
 nav .icon {
@@ -278,13 +278,43 @@ section.demo-undangan .card-demo .paket {
   margin-top: 40px;
   text-align: center;
 }
+section.demo-undangan .card-demo .paket a {
+  color: #000;
+  font-size: 12px;
+}
 
 section.demo-undangan .card-demo .paket div {
   margin: auto;
-  width: 180px;
+  max-width: 180px;
+  overflow: hidden;
   height: 120px;
   background-color: #16424e;
-  border-radius: 5px;
+  border-radius: 15px;
+}
+
+section.demo-undangan .card-demo .paket .undangan-1 img {
+  width: 100%;
+}
+
+footer {
+  background-color: #1daafe;
+  text-align: center;
+  margin-top: -13px;
+  padding: 0 20px 20px 20px;
+  color: #000;
+}
+
+footer h3 {
+  margin-bottom: 30px;
+}
+
+footer p {
+  margin-bottom: 30px;
+}
+
+footer a {
+  text-decoration: none;
+  color: #000;
 }
 
 /* Responsive */
