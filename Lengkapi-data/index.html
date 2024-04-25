@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SInvitation | Data-Client</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Form Detail Acara</h1>
+
+      <form action="https://script.google.com/macros/s/AKfycbyaTDgtQEdkISgX7sBjpg3tclZoUxmbzFs2SZHw0ROTaB-sYFS7naRNSA4x_GIdiTGc/exec" method="post" id="my-form">
+        <div class="section-data">
+          <label for="Nama_pemesan">Nama Pemesan</label><br />
+          <input type="text" name="Nama_pemesan" id="" placeholder="nama pemesan" /><br />
+        </div>
+        <div class="section-data">
+          <label for="Link_Template">Link Template Undangan</label><br />
+          <input type="text" name="Link_Template" id="" /><br />
+          <label for="No_wa">Nomer Wa</label><br />
+          <input type="text" name="No_wa" id="" /><br />
+          <label for="Susunan_Nama_mempelai">Susunan nama mempalai</label><br />
+          <select name="usunan_Nama_mempelai" id="cars" aria-placeholder="pilih">
+            <br />
+            <option value="Pria-Wanita">Pria-Wanita</option>
+            <option value="Wanita-Pria">Wanita-Pria</option>
+          </select>
+          <br />
+          <label for="Agama">Agama</label><br />
+          <input type="text" name="Agama" id="" /><br />
+        </div>
+        <div class="section-data">
+          <label for="nama_panggilan_wanita">Nama Panggilan Wanita</label><br />
+          <input type="text" name="nama_panggilan_wanita" id="" /><br />
+          <label for="nama_Lengkap_wanita">Nama lengkap Wanita</label><br />
+          <input type="text" name="nama_Lengkap_wanita" id="" /><br />
+          <label for="Nama_ortu_wanita">Nama Orang Tua Wanita</label><br />
+          <input type="text" name="Nama_ortu_wanita" id="" /><br />
+          <label for="IG_wanita">Username Instagram Wanita</label><br />
+          <input type="text" name="IG_wanita" id="" /><br />
+        </div>
+        <div class="section-data">
+          <label for="nama_panggilan_pria">Nama Panggilan Pria</label><br />
+          <input type="text" name="nama_panggilan_pria" id="" /><br />
+          <label for="nama_Lengkap_pria">Nama Lengkap Pria</label><br />
+          <input type="text" name="nama_Lengkap_pria" id="" /><br />
+          <label for="Nama_ortu_pria"> Nama Orang Tua Pria</label><br />
+          <input type="text" name="Nama_ortu_pria" id="" /><br />
+          <label for="IG_pria">Username Instagram Pria</label><br />
+          <input type="text" name="IG_pria" id="" /><br />
+        </div>
+        <div class="section-data">
+          <label for="Tanggal_Pernikahan">Tanggal Akad/Pemberkatan/Pewiwahan</label><br />
+          <input type="text" name="Tanggal_Pernikahan" id="" /><br />
+          <label for="Waktu_Pernikahan">Waktu Akad/Pemberkatan/Pewiwahan</label><br />
+          <input type="text" name="Waktu_Pernikahan" id="" /><br />
+          <label for="Alamat_Pernikahan">Alamat Akad/Pemberkatan/Pewiwahan</label><br />
+          <input type="text" name="Alamat_Pernikahan" id="" /><br />
+          <label for="Link_lokasi_Pernikahan">Link Google Map Akad/Pemberkatan/Pewiwahan</label><br />
+          <input type="text" name="Link_lokasi_Pernikahan" id="" /><br />
+        </div>
+        <div class="section-data">
+          <label for="Tanggal_Resepsi">Tanggal Acara Resepsi</label><br />
+          <input type="text" name="Tanggal_Resepsi" id="" /><br />
+          <label for="Waktu_Resepsi">Waktu Acara Resepsi</label><br />
+          <input type="text" name="Waktu_Resepsi" id="" /><br />
+          <label for="Alamat_Resepsi">Alamat Acara Resepsi</label><br />
+          <input type="text" name="Alamat_Resepsi" id="" /><br />
+          <label for="Link_lokasi_Resepsi">Link Google Map Acara Resepsi</label><br />
+          <input type="text" name="Link_lokasi_Resepsi" id="" />
+        </div>
+        <div class="section-data">
+          <label for="Amplop_Digital">Atas nama & Jenis bank</label><br />
+          <input type="text" name="Amplop_Digital" id="" /><br />
+          <label for="No_rek">No Rekening</label><br />
+          <input type="text" name="No_rek" id="" /><br />
+        </div>
+        <div class="section-data">
+          <label for="Lagu">Request Lagu Background</label><br />
+          <input type="text" name="Lagu" id="" /><br />
+        </div>
+        <div class="section-data">
+          <label for="Note">Note</label><br />
+          <textarea name="Note" id="" cols="58.5" rows="5" placeholder="Note/catatan"></textarea>
+        </div>
+
+        <button type="submit" id="submit">Kirim Ucapan</button>
+      </form>
+    </div>
+
+    <script>
+      window.addEventListener("load", function () {
+        const form = document.getElementById("my-form");
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          document.getElementById("submit").innerText = "Sedang Mengirim...";
+          const data = new FormData(form);
+          const action = e.target.action;
+          fetch(action, {
+            method: "POST",
+            body: data,
+          }).then(() => {
+            alert("Data Kamu sudah Di Kirim");
+            document.getElementById("submit").innerText = "Kirim Ucapan";
+            form.reset();
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
