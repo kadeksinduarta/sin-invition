@@ -680,7 +680,7 @@ body {
   }
 }
 
-#tanggal {
+.full-container .ucapan .list-ucapan .list-ucapan-items li span:nth-child(2) {
   font-style: normal;
   font-weight: 300;
   font-size: 12px;

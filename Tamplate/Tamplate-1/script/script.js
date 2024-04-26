@@ -184,12 +184,21 @@ function submitFormToGoogleSheet() {
 //   });
 // }
 
-let url = "https://api.sheety.co/a4bd5376672a26c5e9e288bdaccdf94b/template/sheet1";
-// Fungsi untuk mengambil data dari API
-function fetchData(url) {
-  return fetch(url)
+// let url = "https://api.sheety.co/a4bd5376672a26c5e9e288bdaccdf94b/template/sheet1";
+// URL API
+const url = "https://sheetdb.io/api/v1/g59ij6jksw9uk";
+
+// Fungsi untuk mengambil data dari API dan menampilkannya
+function fetchData() {
+  fetch(url)
     .then((response) => response.json())
-    .then((data) => data.sheet1); // Sesuaikan dengan struktur data API Anda
+    .then((data) => {
+      // Tangani data yang diterima
+      displayData(data);
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
 }
 
 // Fungsi untuk menampilkan data ke dalam elemen HTML
@@ -199,25 +208,19 @@ function displayData(data) {
   // Bersihkan konten sebelum menambahkan data baru
   listUcapan.innerHTML = "";
 
+  // Tampilkan data
   data.forEach((item) => {
     const listItem = document.createElement("li");
     listItem.innerHTML = `
-<span class="nama">${item.nama}</span>
-<span class="tanggal">${item.tanggal}</span>
-<p class="pesan">${item.ucapan}</p>
-`;
+      <span>${item.nama}</span>
+      <span>${item.tanggal}</span>
+      <p>${item.ucapan}</p>
+    `;
     listUcapan.appendChild(listItem);
   });
 }
 
 // Panggil fungsi fetchData saat halaman dimuat
 window.addEventListener("load", function () {
-  const apiUrl = "https://api.sheety.co/a4bd5376672a26c5e9e288bdaccdf94b/template/sheet1"; // Ganti dengan URL API yang sesuai
-  fetchData(apiUrl)
-    .then((data) => {
-      displayData(data);
-    })
-    .catch((error) => {
-      console.error("Error fetching data:", error);
-    });
+  fetchData();
 });
