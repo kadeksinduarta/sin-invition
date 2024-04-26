@@ -183,3 +183,41 @@ function submitFormToGoogleSheet() {
 //     });
 //   });
 // }
+
+let url = "https://api.sheety.co/a4bd5376672a26c5e9e288bdaccdf94b/template/sheet1";
+// Fungsi untuk mengambil data dari API
+function fetchData(url) {
+  return fetch(url)
+    .then((response) => response.json())
+    .then((data) => data.sheet1); // Sesuaikan dengan struktur data API Anda
+}
+
+// Fungsi untuk menampilkan data ke dalam elemen HTML
+function displayData(data) {
+  const listUcapan = document.getElementById("list-ucapan-items");
+
+  // Bersihkan konten sebelum menambahkan data baru
+  listUcapan.innerHTML = "";
+
+  data.forEach((item) => {
+    const listItem = document.createElement("li");
+    listItem.innerHTML = `
+<span class="nama">${item.nama}</span>
+<span class="tanggal">${item.tanggal}</span>
+<p class="pesan">${item.ucapan}</p>
+`;
+    listUcapan.appendChild(listItem);
+  });
+}
+
+// Panggil fungsi fetchData saat halaman dimuat
+window.addEventListener("load", function () {
+  const apiUrl = "https://api.sheety.co/a4bd5376672a26c5e9e288bdaccdf94b/template/sheet1"; // Ganti dengan URL API yang sesuai
+  fetchData(apiUrl)
+    .then((data) => {
+      displayData(data);
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+});
