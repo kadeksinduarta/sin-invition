@@ -124,7 +124,9 @@ function runTextAnimation() {
   AOS.init();
 }
 
+// Format tanggal ke format Indonesia
 function formatDateToIndonesian(dateString) {
+  if (!dateString) return ""; // Handle jika dateString kosong
   var parts = dateString.split("/");
   var day = parseInt(parts[0], 10);
   var month = parseInt(parts[1], 10);
@@ -135,7 +137,7 @@ function formatDateToIndonesian(dateString) {
   return day + " " + months[month - 1] + " " + year;
 }
 
-// Submit form to google sheet functionality
+// Submit form ke Google Sheet
 function submitFormToGoogleSheet() {
   jQuery("#form-guest").submit(function (e) {
     e.preventDefault();
@@ -150,77 +152,44 @@ function submitFormToGoogleSheet() {
       contentType: false,
       success: function () {
         jQuery("#submit-button").text("Kirim Ucapan");
-        alert("Terimakasih, konfirmasi kehadiran Anda sudah terkirim :)");
+        alert("Terimakasih, konfirmasi kehadiran Anda sudah terkirim, silakan di refresh dulu :)");
         jQuery("input[name=nama]").val("");
         jQuery("textarea[name=ucapan]").val("");
-        getGoogleSheet();
+        getGoogleSheet(); // Memanggil kembali untuk memuat data terbaru
       },
     });
   });
 }
 
-// // Get google sheet data
-// function getGoogleSheet() {
-//   // Make an AJAX request to fetch data from AWS Lambda
-//   var scriptUrl = "https://yzoope2yp2uhjv4ongn2xhc6ny0nibdo.lambda-url.us-east-1.on.aws/";
+// Membuat variabel untuk menandai apakah data sudah dimuat atau belum
+var dataLoaded = false;
 
-//   jQuery.getJSON(scriptUrl, function (result) {
-//     console.log("Ucapan: ", result.data);
+// Memuat data dari Google Sheet jika belum dimuat sebelumnya
+function getGoogleSheet() {
+  if (!dataLoaded) {
+    var scriptUrl = "https://api.sheety.co/a4bd5376672a26c5e9e288bdaccdf94b/template/sheet1";
 
-//     jQuery("#list-ucapan-items").empty();
+    jQuery.getJSON(scriptUrl, function (result) {
+      // console.log("Ucapan: ", result); // Periksa struktur respons dari API
 
-//     jQuery.each(result.data, function (index, item) {
-//       var listItem = jQuery("<li>");
-//       var nameSpan = jQuery("<span id='nama'>").text(item.nama);
-//       var tglSpan = jQuery("<span id='tanggal'>").text(" - " + formatDateToIndonesian(item.tanggal));
-//       var messagePara = jQuery("<p id='pesan'>").text(item.ucapan);
+      jQuery("#list-ucapan-items").empty();
 
-//       listItem.append(nameSpan);
-//       listItem.append(tglSpan);
-//       listItem.append(messagePara);
+      // Pastikan respons API langsung berisi array item ucapan
+      jQuery.each(result.sheet1, function (index, item) {
+        var listItem = jQuery("<li>");
+        var nameSpan = jQuery("<span id='nama'>").text(item.nama);
+        var tglSpan = jQuery("<span id='tanggal'>").text(" - " + formatDateToIndonesian(item.tanggal));
+        var messagePara = jQuery("<p id='pesan'>").text(item.ucapan);
 
-//       jQuery("#list-ucapan-items").append(listItem);
-//     });
-//   });
-// }
+        listItem.append(nameSpan);
+        listItem.append(tglSpan);
+        listItem.append(messagePara);
 
-// let url = "https://api.sheety.co/a4bd5376672a26c5e9e288bdaccdf94b/template/sheet1";
-// URL API
-const url = "https://sheetdb.io/api/v1/g59ij6jksw9uk";
+        jQuery("#list-ucapan-items").append(listItem);
+      });
 
-// Fungsi untuk mengambil data dari API dan menampilkannya
-function fetchData() {
-  fetch(url)
-    .then((response) => response.json())
-    .then((data) => {
-      // Tangani data yang diterima
-      displayData(data);
-    })
-    .catch((error) => {
-      console.error("Error fetching data:", error);
+      // Setel status data sudah dimuat
+      dataLoaded = true;
     });
+  }
 }
-
-// Fungsi untuk menampilkan data ke dalam elemen HTML
-function displayData(data) {
-  const listUcapan = document.getElementById("list-ucapan-items");
-
-  // Bersihkan konten sebelum menambahkan data baru
-  listUcapan.innerHTML = "";
-
-  // Tampilkan data
-  data.forEach((item) => {
-    const listItem = document.createElement("li");
-    listItem.innerHTML = `
-      <span>${item.nama}</span>
-      <span>${item.tanggal}</span>
-      <p>${item.ucapan}</p>
-    `;
-    listUcapan.appendChild(listItem);
-  });
-}
-
-// Panggil fungsi fetchData saat halaman dimuat
-window.addEventListener("load", function () {
-  fetchData();
-});
