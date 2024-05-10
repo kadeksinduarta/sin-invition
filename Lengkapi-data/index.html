@@ -5,21 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>SInvitation | Data-Client</title>
     <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Jacques+Francois&family=Poppins:wght@300;400;500;600; rel="stylesheet" />
   </head>
   <body>
     <div class="container">
       <h1>Form Detail Acara</h1>
-
+      <p>jika ada yang membingungkan silakan hubungi kami lewat wa yang tadi</p>
       <form action="https://script.google.com/macros/s/AKfycbyaTDgtQEdkISgX7sBjpg3tclZoUxmbzFs2SZHw0ROTaB-sYFS7naRNSA4x_GIdiTGc/exec" method="post" id="my-form">
         <div class="section-data">
           <label for="Nama_pemesan">Nama Pemesan</label><br />
-          <input type="text" name="Nama_pemesan" id="" placeholder="nama pemesan" /><br />
+          <small>*wahyu adinata</small><br />
+          <input type="text" name="Nama_pemesan" id="" placeholder="nama pemesan" required /><br />
         </div>
         <div class="section-data">
           <label for="Link_Template">Link Template Undangan</label><br />
-          <input type="text" name="Link_Template" id="" /><br />
+          <small>contoh : https://sinvitation.my.id/template/template-1</small><br />
+          <input type="text" name="Link_Template" id="" placeholder="Link Template" required /><br />
           <label for="No_wa">Nomer Wa</label><br />
-          <input type="text" name="No_wa" id="" /><br />
+          <small>083115998188</small><br />
+          <input type="number" name="No_wa" id="" placeholder="No Telepon Yang menghubungi kami" required /><br />
           <label for="Susunan_Nama_mempelai">Susunan nama mempalai</label><br />
           <select name="usunan_Nama_mempelai" id="cars" aria-placeholder="pilih">
             <br />
@@ -28,61 +35,63 @@
           </select>
           <br />
           <label for="Agama">Agama</label><br />
-          <input type="text" name="Agama" id="" /><br />
+          <input type="text" name="Agama" id="" placeholder="contoh : Hindu" /><br />
         </div>
         <div class="section-data">
           <label for="nama_panggilan_wanita">Nama Panggilan Wanita</label><br />
-          <input type="text" name="nama_panggilan_wanita" id="" /><br />
+          <input type="text" name="nama_panggilan_wanita" id="" placeholder="contoh : Sinta" /><br />
           <label for="nama_Lengkap_wanita">Nama lengkap Wanita</label><br />
-          <input type="text" name="nama_Lengkap_wanita" id="" /><br />
+          <input type="text" name="nama_Lengkap_wanita" id="" placeholder="sinta dewi" /><br />
           <label for="Nama_ortu_wanita">Nama Orang Tua Wanita</label><br />
-          <input type="text" name="Nama_ortu_wanita" id="" /><br />
+          <input type="text" name="Nama_ortu_wanita" id="" placeholder="Contoh : Putri Ke dua dari Bapak Anton dan Ibu Mayani" /><br />
           <label for="IG_wanita">Username Instagram Wanita</label><br />
-          <input type="text" name="IG_wanita" id="" /><br />
+          <input type="text" name="IG_wanita" id="" placeholder="Contoh : sinvitations" /><br />
         </div>
         <div class="section-data">
           <label for="nama_panggilan_pria">Nama Panggilan Pria</label><br />
-          <input type="text" name="nama_panggilan_pria" id="" /><br />
+          <input type="text" name="nama_panggilan_pria" id="" placeholder="Putra" /><br />
           <label for="nama_Lengkap_pria">Nama Lengkap Pria</label><br />
-          <input type="text" name="nama_Lengkap_pria" id="" /><br />
+          <input type="text" name="nama_Lengkap_pria" id="" placeholder="Putra Sentanu" /><br />
           <label for="Nama_ortu_pria"> Nama Orang Tua Pria</label><br />
-          <input type="text" name="Nama_ortu_pria" id="" /><br />
+          <input type="text" name="Nama_ortu_pria" id="" placeholder="Contoh : Putra Pertama dari Bapak Bagus dan Ibu Ani" /><br />
           <label for="IG_pria">Username Instagram Pria</label><br />
-          <input type="text" name="IG_pria" id="" /><br />
+          <input type="text" name="IG_pria" id="" placeholder="Contoh : sinvitations" /><br />
         </div>
         <div class="section-data">
           <label for="Tanggal_Pernikahan">Tanggal Akad/Pemberkatan/Pewiwahan</label><br />
           <input type="date" name="Tanggal_Pernikahan" id="" /><br />
           <label for="Waktu_Pernikahan">Waktu Akad/Pemberkatan/Pewiwahan</label><br />
-          <input type="text" name="Waktu_Pernikahan" id="" /><br />
+          <input type="text" name="Waktu_Pernikahan" id="" placeholder="Contoh : 08:00 WIB" /><br />
           <label for="Alamat_Pernikahan">Alamat Akad/Pemberkatan/Pewiwahan</label><br />
-          <input type="text" name="Alamat_Pernikahan" id="" /><br />
+          <input type="text" name="Alamat_Pernikahan" id="" placeholder="Contoh : Jl. abimanyu, jawa barat" /><br />
           <label for="Link_lokasi_Pernikahan">Link Google Map Akad/Pemberkatan/Pewiwahan</label><br />
-          <input type="text" name="Link_lokasi_Pernikahan" id="" /><br />
+          <input type="text" name="Link_lokasi_Pernikahan" id="" placeholder="Contoh : https://maps.app.goo.gl/V5saEadkTc1FmP7G9" /><br />
         </div>
         <div class="section-data">
           <label for="Tanggal_Resepsi">Tanggal Acara Resepsi</label><br />
           <input type="date" name="Tanggal_Resepsi" id="" /><br />
           <label for="Waktu_Resepsi">Waktu Acara Resepsi</label><br />
-          <input type="text" name="Waktu_Resepsi" id="" /><br />
+          <input type="text" name="Waktu_Resepsi" id="" placeholder="Contoh : 08:00 WIB" /><br />
           <label for="Alamat_Resepsi">Alamat Acara Resepsi</label><br />
-          <input type="text" name="Alamat_Resepsi" id="" /><br />
+          <input type="text" name="Alamat_Resepsi" id="" placeholder="Contoh : Jl. abimanyu, jawa barat" /><br />
           <label for="Link_lokasi_Resepsi">Link Google Map Acara Resepsi</label><br />
-          <input type="text" name="Link_lokasi_Resepsi" id="" />
+          <input type="text" name="Link_lokasi_Resepsi" id="" placeholder="Contoh : https://maps.app.goo.gl/V5saEadkTc1FmP7G9" />
         </div>
         <div class="section-data">
           <label for="Amplop_Digital">Atas nama & Jenis bank</label><br />
-          <input type="text" name="Amplop_Digital" id="" /><br />
+          <small>isi nama bank sama nama pemagang</small><br />
+          <input type="text" name="Amplop_Digital" id="" placeholder="Contoh : Bank BCA, An Sinta" /><br />
           <label for="No_rek">No Rekening</label><br />
-          <input type="text" name="No_rek" id="" /><br />
+          <input type="text" name="No_rek" id="" placeholder="Contoh : 8993 4344 43433" /><br />
         </div>
         <div class="section-data">
           <label for="Lagu">Request Lagu Background</label><br />
-          <input type="text" name="Lagu" id="" /><br />
+          <small>Kasi Link Youtube atau Nama lagu/Backsound</small><br />
+          <input type="text" name="Lagu" id="" placeholder="Contoh : https://youtu.be/riEqFZFbnWk?si=MYPwTfqYJMGKjt_e" /><br />
         </div>
         <div class="section-data">
-          <label for="Note">Note</label><br />
-          <textarea name="Note" id="" cols="30" rows="5" placeholder="Note/catatan"></textarea>
+          <label for="Note">Note/Catatan</label><br />
+          <textarea name="Note" id="" cols="30" rows="5" placeholder="Note/catatan yang perlu di tambahkan"></textarea>
         </div>
 
         <button type="submit" id="submit">Kirim Ucapan</button>
@@ -101,8 +110,9 @@
             method: "POST",
             body: data,
           }).then(() => {
-            alert("Data Kamu sudah Di Kirim");
             document.getElementById("submit").innerText = "Kirim Ucapan";
+            window.location.href = "selesai-data.html";
+            alert("Data Kamu sudah Di Kirim");
             form.reset();
           });
         });

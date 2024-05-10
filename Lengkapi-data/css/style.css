@@ -4,24 +4,34 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: #12d6fa;
-}
-
 .container {
   /* padding: 30px 10%; */
   display: flex;
+  background-color: #12d6fa;
   /* width: 500px; */
   margin: auto;
   flex-direction: column;
   justify-content: center;
-  /* background-color: #fff; */
+  font-family: "Poppins", sans-serif;
 }
 
 .container h1 {
   text-align: center;
   padding-top: 40px;
   color: #fff;
+}
+
+.container p {
+  text-align: center;
+  color: #fff;
+}
+
+.container small {
+  /* text-align: center; */
+  color: #434343;
+  font-size: 12px;
+  margin-bottom: 5px;
+  display: inline-block;
 }
 
 .container form {
@@ -70,7 +80,50 @@ body {
   border-radius: 5px;
   border: 1px solid rgb(255, 255, 255);
   background-color: #5ee7ff;
-  color: #0b0808;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.container textarea {
+  width: 100%;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+/* halaman ke 2 */
+.nav {
+  background-color: #12d6fa;
+  padding: 30px 50px;
+  color: #fff;
+}
+.buttn-hubungi-wa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+  text-decoration: none;
+}
+
+.buttn-hubungi-wa button {
+  padding: 15px 45px;
+  border: 0px;
+  background-color: #12d6fa;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #fff;
+  transition: all 0.3s;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+.buttn-hubungi-wa button:hover {
+  border: 2px solid #12d6fa;
+  background-color: #fff;
+  color: #12d6fa;
+}
+
+.buttn-hubungi-wa button:active {
+  transform: scale(0.97);
 }
 
 @media (max-width: 700px) {

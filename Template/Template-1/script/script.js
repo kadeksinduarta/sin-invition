@@ -137,30 +137,6 @@ function formatDateToIndonesian(dateString) {
   return day + " " + months[month - 1] + " " + year;
 }
 
-// Submit form ke Google Sheet
-function submitFormToGoogleSheet() {
-  jQuery("#form-guest").submit(function (e) {
-    e.preventDefault();
-    var formData = new FormData(jQuery(this)[0]);
-    var action = jQuery(this).attr("action");
-    jQuery("#submit-button").text("Sedang Mengirim....");
-    jQuery.ajax({
-      url: action,
-      type: "POST",
-      data: formData,
-      processData: false,
-      contentType: false,
-      success: function () {
-        jQuery("#submit-button").text("Kirim Ucapan");
-        alert("Terimakasih, konfirmasi kehadiran Anda sudah terkirim, silakan di refresh dulu :)");
-        jQuery("input[name=nama]").val("");
-        jQuery("textarea[name=ucapan]").val("");
-        getGoogleSheet(); // Memanggil kembali untuk memuat data terbaru
-      },
-    });
-  });
-}
-
 // Membuat variabel untuk menandai apakah data sudah dimuat atau belum
 var dataLoaded = false;
 
@@ -192,4 +168,29 @@ function getGoogleSheet() {
       dataLoaded = true;
     });
   }
+}
+
+// Submit form ke Google Sheet
+function submitFormToGoogleSheet() {
+  jQuery("#form-guest").submit(function (e) {
+    e.preventDefault();
+    var formData = new FormData(jQuery(this)[0]);
+    var action = jQuery(this).attr("action");
+    jQuery("#submit-button").text("Sedang Mengirim....");
+    jQuery.ajax({
+      url: action,
+      type: "POST",
+      data: formData,
+      processData: false,
+      contentType: false,
+      success: function () {
+        jQuery("#submit-button").text("Kirim Ucapan");
+        alert("Terimakasih, konfirmasi kehadiran Anda sudah terkirim, silakan di refresh dulu :)");
+        jQuery("input[name=nama]").val("");
+        jQuery("textarea[name=ucapan]").val("");
+        getGoogleSheet(); // Memanggil kembali untuk memuat data terbaru
+        // console.log("Ucapan: ", result);
+      },
+    });
+  });
 }
