@@ -28,6 +28,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   position: fixed;
+  /* transition: all 3s ease-in-out; */
 }
 
 nav ul {
@@ -433,6 +434,7 @@ footer .media-sosial a img {
 
   nav .icon {
     display: block;
+    /* transition: all 3s ease-in-out !important; */
   }
   nav ul {
     width: 100%;
@@ -445,19 +447,18 @@ footer .media-sosial a img {
     position: absolute;
     text-align: center;
     background-color: #12d6fa;
-    transition: all 3s;
     border-top: 1px solid black;
+    transition: right 0.3s ease;
+  }
+
+  nav ul.active {
+    right: 0;
   }
 
   nav ul li a {
     /* background-color: #fff; */
     display: block;
     padding: 10px 90px;
-  }
-
-  nav ul.active {
-    left: 0;
-    transition: all 0.2s ease-in-out;
   }
 
   section.main h1 {
