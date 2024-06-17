@@ -176,19 +176,23 @@ section.detail-undngan .card-list {
 
 section.detail-undngan .card-list div {
   border: 2px solid transparent;
-  width: 275px;
-  height: 300px;
+  width: 230px;
+  height: 220px;
   padding: 10px;
+  margin-bottom: 20px;
   text-align: center;
   transition: all 0.2s ease-in;
   cursor: pointer;
+  border: 1px solid black;
+  border-radius: 12px;
+}
+
+section.detail-undngan .card-list div img {
+  width: 35px;
 }
 
 section.detail-undngan .card-list div:hover {
   box-shadow: 0px 2px 5px rgba(29, 170, 254, 0.5);
-}
-
-section.detail-undngan .card-list .card-hemat {
 }
 
 section.detail-undngan .card-list img {
@@ -198,11 +202,13 @@ section.detail-undngan .card-list img {
 }
 
 section.detail-undngan .card-list h1 {
-  font-size: 1.7rem;
+  font-size: 1.2rem;
   font-family: var(--font-title);
   padding: 10px 0;
   font-weight: 400;
   transition: all 0.3s ease-in-out;
+  font-weight: bold;
+  color: #16424e;
 }
 
 section.detail-undngan .card-list div:hover h1 {
@@ -257,7 +263,8 @@ section.pilihan-paket .card-paket .paket:hover {
 
 section.pilihan-paket .card-paket .paket h2 {
   padding: 10px;
-  font-weight: 400;
+  font-weight: bold;
+  color: #00cff3;
 }
 
 section.pilihan-paket .card-paket .paket h3 {
@@ -273,10 +280,13 @@ section.demo-filter h1 {
 
 section.pilihan-paket .card-paket .paket ul li {
   line-height: 25px;
+  text-align: left;
+  padding-left: 10px;
 }
 
 section.pilihan-paket .card-paket .paket ul li::before {
   content: "-> ";
+  padding-right: 10px;
 }
 
 section.pilihan-paket .card-paket .paket a {
@@ -286,6 +296,11 @@ section.pilihan-paket .card-paket .paket a {
   margin-top: 15px;
   border-radius: 10px;
   color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+section.pilihan-paket .card-paket .paket a:active {
+  transform: scale(0.95);
 }
 
 section.demo-undangan {
@@ -486,6 +501,25 @@ footer .media-sosial a img {
   section.demo-undangan .title-information p {
     width: 90%;
     font-size: 0.8rem;
+  }
+
+  section.detail-undngan .card-list div {
+    width: 150px;
+    height: 100%;
+  }
+
+  section.detail-undngan .card-list div img {
+    width: 30px;
+  }
+
+  section.detail-undngan .card-list h1 {
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 3px 0;
+  }
+  section.detail-undngan .card-list p {
+    font-size: 0.7rem;
+    /* padding: 3px 0; */
   }
 
   section.pilihan-paket {
