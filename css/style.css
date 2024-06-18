@@ -310,9 +310,13 @@ section.demo-undangan {
 section.demo-undangan .card-demo .paket {
   margin-top: 40px;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 section.demo-undangan .card-demo .paket a {
   color: #000;
+  margin-bottom: 20px;
   font-size: 12px;
   display: inline-block;
 }
@@ -331,11 +335,11 @@ section.demo-undangan .card-demo .paket div img {
   height: 100%;
 }
 
-section.demo-undangan .card-demo .paket a:hover h1 {
+/* section.demo-undangan .card-demo .paket a:hover h1 {
   color: #ffffff;
   background-color: rgb(35, 107, 128);
   margin-top: -60px;
-}
+} */
 
 section.demo-undangan .card-demo .paket h1 {
   padding: 10px 20px;
