@@ -242,7 +242,7 @@ section.pilihan-paket .card-paket {
 
 section.pilihan-paket .card-paket .paket {
   width: 280px;
-  height: 360px;
+  height: 100%;
   background-color: #fff;
   text-align: center;
   padding: 20px;
@@ -276,6 +276,10 @@ section.pilihan-paket .card-paket .paket h3 {
 section.pilihan-paket .card-paket .paket h1,
 section.demo-filter h1 {
   font-weight: 500;
+}
+
+section.pilihan-paket .card-paket .paket ul {
+  margin-top: 20px;
 }
 
 section.pilihan-paket .card-paket .paket ul li {
