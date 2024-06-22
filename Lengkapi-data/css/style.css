@@ -92,16 +92,25 @@
 }
 
 /* halaman ke 2 */
-.nav {
+
+.nav-data-terkirim {
+  font-family: "Poppins", sans-serif;
   background-color: #12d6fa;
   padding: 30px 50px;
   color: #fff;
+  text-align: center;
 }
+
+.nav-data-terkirim h1 {
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+
 .buttn-hubungi-wa {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 40px 0;
+  /* margin: 40px 0; */
   text-decoration: none;
 }
 
@@ -136,5 +145,43 @@
   textarea {
     width: 100%;
     height: 50px;
+  }
+
+  .container-halaman-2 {
+    background-color: #12d6fa;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-data-terkirim {
+    padding: 30px 15px;
+  }
+
+  .buttn-hubungi-wa button {
+    padding: 15px 45px;
+    border: 0px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #12d6fa;
+    transition: all 0.3s;
+    border: 2px solid #646262;
+    cursor: pointer;
+  }
+
+  .buttn-hubungi-wa button:hover {
+    border: 2px solid #000000;
+  }
+
+  .nav-data-terkirim h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .nav-data-terkirim p {
+    font-size: 12px;
   }
 }
