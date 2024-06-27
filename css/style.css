@@ -46,6 +46,49 @@ nav h2 span {
   color: #16424e;
 }
 
+.dropbtn {
+  background-color: transparent;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  font-family: var(--font-paragraf);
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* .dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+} */
+
 nav ul li a {
   transition: all 0.2s ease-in-out;
   font-family: var(--font-paragraf);
@@ -320,7 +363,7 @@ section.demo-undangan .card-demo .paket {
 }
 section.demo-undangan .card-demo .paket a {
   color: #000;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   font-size: 12px;
   display: inline-block;
 }
@@ -330,7 +373,6 @@ section.demo-undangan .card-demo .paket div {
   max-width: 280px;
   overflow: hidden;
   height: 200px;
-  /* background-color: #16424e; */
   border-radius: 15px;
 }
 
@@ -339,23 +381,37 @@ section.demo-undangan .card-demo .paket div img {
   height: 100%;
 }
 
-/* section.demo-undangan .card-demo .paket a:hover h1 {
-  color: #ffffff;
-  background-color: rgb(35, 107, 128);
-  margin-top: -60px;
-} */
-
 section.demo-undangan .card-demo .paket h1 {
   padding: 10px 20px;
   color: #fff;
   display: inline-block;
-  margin-top: -10px;
+  margin-top: -5px;
   font-size: 15px;
   font-family: var(--font-paragraf);
   border-radius: 10px;
   background-color: #1daafe;
   border: 1px solid black;
   transition: all 0.3s ease-in-out;
+}
+
+section .btn-lihat-tema {
+  padding: 9px 35px;
+  display: block;
+  margin: 10px auto 0;
+  border: 1px solid #12d6fa;
+  font-family: var(--font-paragraf);
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+  font-weight: bold;
+  color: #706f6f;
+}
+
+section .btn-lihat-tema:active {
+  color: #fff;
+  background-color: #1daafe;
+  transform: scale(0.97);
 }
 
 section.demo-filter {
@@ -417,6 +473,46 @@ section.demo-filter .card-demo .paket .pesan {
   display: inline-block;
   background-color: #fff;
 }
+/* apakah akan gagal
+
+section.acc {
+  padding: 0 8%;
+  margin-top: 50px;
+}
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.acc button {
+  background-color: #aeaeae;
+
+}
+
+.acc button:hover {
+
+}
+
+.active,
+.accordion:hover {
+
+}
+
+.panel {
+  padding: 10px 18px;
+  display: none;
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+} */
 
 footer {
   margin-top: 50px;
@@ -565,5 +661,12 @@ footer .media-sosial a img {
   section.demo-filter .card-demo .paket .pesan {
     padding: 10px 20px;
     font-size: 15px;
+  }
+
+  section.demo-undangan .card-demo .paket div {
+    max-width: 200px;
+    overflow: hidden;
+    height: 120px;
+    border-radius: 0px;
   }
 }
