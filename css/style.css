@@ -308,6 +308,8 @@ section.pilihan-paket .card-paket .paket h2 {
   padding: 10px;
   font-weight: bold;
   color: #00cff3;
+  /* background-color: #00cff3; */
+  /* width: 130%; */
 }
 
 section.pilihan-paket .card-paket .paket h3 {
@@ -329,11 +331,6 @@ section.pilihan-paket .card-paket .paket ul li {
   line-height: 25px;
   text-align: left;
   padding-left: 10px;
-}
-
-section.pilihan-paket .card-paket .paket ul li::before {
-  content: "-> ";
-  padding-right: 10px;
 }
 
 section.pilihan-paket .card-paket .paket a {
