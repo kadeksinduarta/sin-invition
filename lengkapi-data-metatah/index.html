@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SInvitation | Data-Client</title>
+    <link rel="stylesheet" href="../Lengkapi-data/css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Jacques+Francois&family=Poppins:wght@300;400;500;600; rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Form Detail Acara</h1>
+      <p>jika ada yang membingungkan silakan hubungi kami lewat wa yang tadi</p>
+      <form action="https://script.google.com/macros/s/AKfycbxa3uYOVPjbK-_nFOyiLeUY-eUrp7SP9WGDedAKObdq3LYYCdxaTBWb2Xi5Uu8NrwKo/exec" method="post" id="my-form">
+        <div class="section-data">
+          <label for="Nama_pemesan">Nama Pemesan</label><br />
+          <small>*wahyu adinata</small><br />
+          <input type="text" name="Nama_pemesan" id="" placeholder="nama pemesan" required /><br />
+        </div>
+        <div class="section-data">
+          <label for="Link_Template">Link Template Undangan</label><br />
+          <small>contoh : https://sinvitation.my.id/template/template-1</small><br />
+          <input type="text" name="Link_Template" id="" placeholder="Link Template" required /><br />
+          <label for="No_wa">Nomer Wa</label><br />
+          <small>083115998188</small><br />
+          <input type="number" name="No_wa" id="" placeholder="No Telepon Yang menghubungi kami" required /><br />
+          <label for="Susunan_Nama_mempelai">Todal Yang Akan Metatah</label><br />
+          <input type="number" for="Total_yang_akan_metatah" placeholder="Contoh: 3" /><br />
+          <br />
+          <label for="Agama">Agama</label><br />
+          <input type="text" name="Agama" id="" placeholder="contoh : Hindu" /><br />
+        </div>
+        <div class="section-data">
+          <label for="nama_nama">Nama-nama</label><br />
+          <small style="font-weight: bold">
+            Contoh:
+            <ol style="font-weight: 100; color: #5d5d5d; margin-left: 20px">
+              <li>Putu Brata</li>
+              <li>Kadek ojik</li>
+              <li>i Komang vasya</li>
+            </ol></small
+          ><br />
+          <textarea name="nama-nama" id="" cols="30" rows="5" placeholder="ikuti contoh di atas"></textarea>
+
+          <label for="nama_ayah">Nama Ortu</label><br />
+          <small style="font-weight: bold">
+            Contoh:
+            <ol style="font-weight: 100; color: #5d5d5d; margin-left: 20px">
+              <li>Putu Brata</li>
+              <li>Kadek ojik</li>
+              <br />
+              <p style="color: #5d5d5d; text-align: left">//catatan: jika 2 keluarga yang ikut metatah tambahkan 2 nama ayah nya saja</p>
+              <p style="color: #5d5d5d; text-align: left">//catatan: jika 1 keluarga tambahkan nama ayah dan ibu</p>
+            </ol></small
+          ><br />
+
+          <textarea name="nama_ortu" id="" cols="30" rows="5" placeholder="ikuti contoh di atas"></textarea>
+        </div>
+
+        <div class="section-data">
+          <label for="Tanggal_acara">Tanggal Acara</label><br />
+          <input type="date" name="Tanggal_Acara" id="" /><br />
+          <label for="Waktu_Acara">Waktu Acara</label><br />
+          <input type="text" name="Waktu_acara" id="" placeholder="Contoh : 08:00 WIB" /><br />
+          <label for="Alamat_Acara">Alamat Acara</label><br />
+          <input type="text" name="Alamat_Acara" id="" placeholder="Contoh : Jl. abimanyu, jawa barat" /><br />
+          <label for="Link_lokasi_Acara">Link Google Map Acara</label><br />
+          <input type="text" name="Link_lokasi_Acara" id="" placeholder="Contoh : https://maps.app.goo.gl/V5saEadkTc1FmP7G9" /><br />
+        </div>
+        <div class="section-data">
+          <label for="Tanggal_Resepsi">Tanggal Acara Resepsi</label><br />
+          <input type="date" name="Tanggal_Resepsi" id="" /><br />
+          <label for="Waktu_Resepsi">Waktu Acara Resepsi</label><br />
+          <input type="text" name="Waktu_Resepsi" id="" placeholder="Contoh : 08:00 WIB" /><br />
+          <label for="Alamat_Resepsi">Alamat Acara Resepsi</label><br />
+          <input type="text" name="Alamat_Resepsi" id="" placeholder="Contoh : Jl. abimanyu, jawa barat" /><br />
+          <label for="Link_lokasi_Resepsi">Link Google Map Acara Resepsi</label><br />
+          <input type="text" name="Link_lokasi_Resepsi" id="" placeholder="Contoh : https://maps.app.goo.gl/V5saEadkTc1FmP7G9" />
+        </div>
+        <div class="section-data">
+          <label for="Amplop_Digital">Atas nama & Jenis bank (boleh tidak di isi)</label><br />
+          <small>isi nama bank sama nama pemagang</small><br />
+          <input type="text" name="Amplop_Digital" id="" placeholder="Contoh : Bank BCA, An Sinta" /><br />
+          <label for="No_rek">No Rekening</label><br />
+          <input type="text" name="No_rek" id="" placeholder="Contoh : 8993 4344 43433" /><br />
+        </div>
+        <div class="section-data">
+          <label for="Lagu">Request Lagu Background</label><br />
+          <small>Kasi Link Youtube atau Nama lagu/Backsound</small><br />
+          <input type="text" name="Lagu" id="" placeholder="Contoh : https://youtu.be/riEqFZFbnWk?si=MYPwTfqYJMGKjt_e" /><br />
+        </div>
+        <div class="section-data">
+          <label for="Note">Note/Catatan</label><br />
+          <textarea name="Note" id="" cols="30" rows="5" placeholder="Note/catatan yang perlu di tambahkan"></textarea>
+        </div>
+
+        <button type="submit" id="submit">Kirim Data</button>
+      </form>
+    </div>
+
+    <script>
+      window.addEventListener("load", function () {
+        const form = document.getElementById("my-form");
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          document.getElementById("submit").innerText = "Sedang Mengirim...";
+          const data = new FormData(form);
+          const action = e.target.action;
+          fetch(action, {
+            method: "POST",
+            body: data,
+          }).then(() => {
+            document.getElementById("submit").innerText = "Kirim Ucapan";
+            window.location.href = "../Lengkapi-data/selesai-data.html";
+            alert("Data Kamu sudah Di Kirim");
+            form.reset();
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
