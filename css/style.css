@@ -347,8 +347,28 @@ section.pilihan-paket .card-paket .paket a:active {
   transform: scale(0.95);
 }
 
+/* halaman undangan */
 section.demo-undangan {
   padding: 20px 8%;
+}
+
+section.demo-undangan .catagory {
+  display: flex;
+  justify-content: center;
+  /* background-color: #12d6fa; */
+}
+section.demo-undangan .catagory li {
+  margin: 0 10px;
+  color: #000;
+  font-size: 15px;
+  background-color: #fff;
+  border: 1px solid #00cff3;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-family: var(--font-paragraf);
+}
+section.demo-undangan .catagory li a {
+  color: #000;
 }
 
 section.demo-undangan .card-demo .paket {
@@ -356,39 +376,71 @@ section.demo-undangan .card-demo .paket {
   text-align: center;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
+
 section.demo-undangan .card-demo .paket a {
   color: #000;
   margin-bottom: 50px;
   font-size: 12px;
+  padding: 20px;
+  margin-top: -10px;
+  box-sizing: border-box;
+  border: 1px solid black;
   display: inline-block;
+  border-radius: 5px;
 }
 
-section.demo-undangan .card-demo .paket div {
+section.demo-undangan .card-demo .paket div.gambar {
   margin: auto;
-  max-width: 280px;
+  /* max-width: 280px; */
   overflow: hidden;
+  /* margin: auto; */
   height: 200px;
   border-radius: 15px;
 }
 
 section.demo-undangan .card-demo .paket div img {
-  width: 100%;
-  height: 100%;
+  /* width: 80%; */
+  bottom: 0;
+  height: 80%;
+  margin: 20px 0;
 }
 
-section.demo-undangan .card-demo .paket h1 {
-  padding: 10px 20px;
+section.demo-undangan .card-demo .deskripsi {
+  display: flex;
+  padding-top: 10px;
+  justify-content: space-between;
+  border-top: 1px solid black;
+}
+
+section.demo-undangan .card-demo .deskripsi .button-preview h1 {
+  padding: 10px 30px;
   color: #fff;
+  margin-top: 7px;
   display: inline-block;
-  margin-top: -5px;
-  font-size: 15px;
+  font-size: 13px;
   font-family: var(--font-paragraf);
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: #1daafe;
   border: 1px solid black;
   transition: all 0.3s ease-in-out;
+}
+
+section.demo-undangan .card-demo .deskripsi h2 {
+  font-size: 15px;
+  text-align: left;
+  font-family: var(--font-paragraf);
+}
+
+section.demo-undangan .card-demo .deskripsi p {
+  text-align: left;
+  font-size: 10px;
+}
+
+section.demo-undangan .card-demo .deskripsi p.harga {
+  font-size: 16px;
+  /* padding: 20px;  */
 }
 
 section .btn-lihat-tema {
@@ -444,6 +496,8 @@ section.demo-filter .card-demo .paket img {
 section.demo-filter .card-demo .paket img:hover {
   box-shadow: 0px 0px 8px rgba(70, 70, 70, 0.58);
 }
+
+/* filter */
 
 section.demo-filter .card-demo .paket .coba {
   padding: 10px 50px;
@@ -650,7 +704,51 @@ footer .media-sosial a img {
     margin-top: 50px;
   }
 
-  section.demo-filter .card-demo .paket {
+  section.demo-undangan .card-demo .paket a {
+    margin-bottom: 30px;
+    padding: 0px;
+    width: 120px;
+  }
+
+  section.demo-undangan .card-demo .paket div.gambar {
+    height: 120px;
+  }
+
+  section.demo-undangan .card-demo .paket div img {
+    height: 80%;
+  }
+
+  section.demo-undangan .card-demo .deskripsi {
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+    border-top: 1px solid black;
+  }
+
+  section.demo-undangan .card-demo .deskripsi .button-preview h1 {
+    padding: 5px 10px;
+    color: #fff;
+    margin-top: 7px;
+    border-radius: 3px;
+    font-weight: 100;
+    display: inline-block;
+    font-size: 10px;
+  }
+
+  section.demo-undangan .card-demo .deskripsi h2 {
+    font-size: 11px;
+  }
+
+  section.demo-undangan .card-demo .deskripsi p {
+    font-size: 7px;
+  }
+
+  section.demo-undangan .card-demo .deskripsi p.harga {
+    font-size: 12px;
+    /* padding: 20px;  */
+  }
+
+  /* section.demo-filter .card-demo .paket {
     width: 150px;
   }
 
@@ -665,5 +763,15 @@ footer .media-sosial a img {
     overflow: hidden;
     height: 120px;
     border-radius: 0px;
+  } */
+}
+
+@media (max-width: 290px) {
+  section.demo-undangan .card-demo .paket {
+    margin-top: 40px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
