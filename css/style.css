@@ -367,8 +367,21 @@ section.demo-undangan .catagory li {
   border-radius: 3px;
   font-family: var(--font-paragraf);
 }
-section.demo-undangan .catagory li a {
-  color: #000;
+
+section.demo-undangan .card-demo .second-category button {
+  padding: 5px 8px;
+  background-color: #fff;
+  border-radius: 3px;
+  margin: 0 6px;
+  font-size: 10px;
+  border: 1px solid black;
+}
+
+section.demo-undangan .card-demo .second-category button.button-catagory-active {
+  padding: 5px 8px;
+  background-color: #00cff3;
+  border-radius: 3px;
+  border: 1px solid black;
 }
 
 section.demo-undangan .card-demo .paket {
@@ -703,6 +716,19 @@ footer .media-sosial a img {
     font-family: var(--font-title);
     margin-top: 50px;
   }
+
+  section.demo-undangan .card-demo .second-category {
+    margin: 30px auto 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* section.demo-undangan .card-demo .second-category button.button-catagory-active {
+    padding: 5px 8px;
+    background-color: #00cff3;
+    border-radius: 3px;
+    border: 1px solid black;
+  } */
 
   section.demo-undangan .card-demo .paket a {
     margin-bottom: 30px;
