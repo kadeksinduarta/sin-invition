@@ -215,9 +215,9 @@ document.addEventListener("DOMContentLoaded", () => {
   btnIncludeFoto.addEventListener("click", () => {
     const ElegantTema = themes.filter((theme) => theme.category === "Tema");
     renderThemes(ElegantTema);
-    btnBerurutan.style.display = "block";
-    btnElegant.style.display = "block";
-    btnTerbaru.style.display = "block";
+    btnBerurutan.style.display = "inline-block";
+    btnElegant.style.display = "inline-block";
+    btnTerbaru.style.display = "inline-block";
   });
 
   btnBerurutan.addEventListener("click", () => {
