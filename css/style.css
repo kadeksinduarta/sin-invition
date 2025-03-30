@@ -39,7 +39,7 @@ nav ul {
 }
 
 nav a img {
-  width: 200px;
+  width: 150px;
 }
 
 nav h2 span {
@@ -107,10 +107,10 @@ nav .icon {
 }
 
 nav .contactt {
-  padding: 10px 25px;
+  padding: 5px 20px;
   background-color: #fff;
   color: #12d6fa;
-  border-radius: 12px;
+  border-radius: 8px;
   font-weight: bold;
   border: 2px solid white;
 }
@@ -312,7 +312,8 @@ section.pilihan-paket .card-paket .paket h2 {
   /* width: 130%; */
 }
 
-section.pilihan-paket .card-paket .paket h3 {
+section.pilihan-paket .card-paket .paket h3,
+h3.harga {
   font-weight: 400;
   padding: 5px;
   text-decoration: line-through;
@@ -434,7 +435,7 @@ section.demo-undangan .card-demo .deskripsi .button-preview h1 {
   display: inline-block;
   font-size: 13px;
   font-family: var(--font-paragraf);
-  border-radius: 5px;
+  border-radius: 3px;
   background-color: #1daafe;
   border: 1px solid black;
   transition: all 0.3s ease-in-out;
@@ -451,8 +452,9 @@ section.demo-undangan .card-demo .deskripsi p {
   font-size: 10px;
 }
 
-section.demo-undangan .card-demo .deskripsi p.harga {
+section.demo-undangan .card-demo .deskripsi p.harga-diskon {
   font-size: 16px;
+
   /* padding: 20px;  */
 }
 
@@ -462,7 +464,7 @@ section .btn-lihat-tema {
   margin: 10px auto 0;
   border: 1px solid #12d6fa;
   font-family: var(--font-paragraf);
-  border-radius: 10px;
+  border-radius: 5px;
   cursor: pointer;
   background-color: transparent;
   transition: all 0.3s ease-in-out;
@@ -769,7 +771,7 @@ footer .media-sosial a img {
     font-size: 7px;
   }
 
-  section.demo-undangan .card-demo .deskripsi p.harga {
+  section.demo-undangan .card-demo .deskripsi p.harga-diskon {
     font-size: 12px;
     /* padding: 20px;  */
   }
