@@ -207,6 +207,38 @@ const themesTanpaFoto = [
     image: "../gambar/tanpa-foto-tema-2.png",
     link: "https://s-invitation.my.id/tanpa-foto-tema-2/?untuk=nama+tamu",
   },
+  {
+    id: 3,
+    name: "Tanpa Foto Tema 3",
+    category: "Tanpa Foto",
+    price: 100000,
+    image: "../gambar/tanpa-foto-tema-3.png",
+    link: "https://s-invitation.my.id/tanpa-foto-tema-3/?untuk=nama+tamu",
+  },
+  {
+    id: 4,
+    name: "Tanpa Foto Tema 4",
+    category: "Tanpa Foto",
+    price: 100000,
+    image: "../gambar/tanpa-foto-tema-4.png",
+    link: "https://s-invitation.my.id/tanpa-foto-tema-4/?untuk=nama+tamu",
+  },
+  {
+    id: 5,
+    name: "Tanpa Foto Tema 5",
+    category: "Tanpa Foto",
+    price: 100000,
+    image: "../gambar/tanpa-foto-tema-5.png",
+    link: "https://s-invitation.my.id/tanpa-foto-tema-5/?untuk=nama+tamu",
+  },
+  {
+    id: 6,
+    name: "Tanpa Foto Tema 6",
+    category: "Tanpa Foto",
+    price: 100000,
+    image: "../gambar/tanpa-foto-tema-6.png",
+    link: "https://s-invitation.my.id/tanpa-foto-tema-6/?untuk=nama+tamu",
+  },
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
