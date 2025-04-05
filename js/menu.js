@@ -193,7 +193,7 @@ const themes = [
 const themesTanpaFoto = [
   {
     id: 1,
-    name: "Tanpa Foto Tema 1",
+    name: "Tanpa Foto-1",
     category: "Tanpa Foto",
     price: 100000,
     image: "../gambar/tanpa-foto-tema-1.png",
@@ -201,7 +201,7 @@ const themesTanpaFoto = [
   },
   {
     id: 2,
-    name: "Tanpa Foto Tema 2",
+    name: "Tanpa Foto-2",
     category: "Tanpa Foto",
     price: 100000,
     image: "../gambar/tanpa-foto-tema-2.png",
@@ -209,7 +209,7 @@ const themesTanpaFoto = [
   },
   {
     id: 3,
-    name: "Tanpa Foto Tema 3",
+    name: "Tanpa Foto-3",
     category: "Tanpa Foto",
     price: 100000,
     image: "../gambar/tanpa-foto-tema-3.png",
@@ -217,7 +217,7 @@ const themesTanpaFoto = [
   },
   {
     id: 4,
-    name: "Tanpa Foto Tema 4",
+    name: "Tanpa Foto-4",
     category: "Tanpa Foto",
     price: 100000,
     image: "../gambar/tanpa-foto-tema-4.png",
@@ -225,7 +225,7 @@ const themesTanpaFoto = [
   },
   {
     id: 5,
-    name: "Tanpa Foto Tema 5",
+    name: "Tanpa Foto-5",
     category: "Tanpa Foto",
     price: 100000,
     image: "../gambar/tanpa-foto-tema-5.png",
@@ -233,7 +233,7 @@ const themesTanpaFoto = [
   },
   {
     id: 6,
-    name: "Tanpa Foto Tema 6",
+    name: "Tanpa Foto-6",
     category: "Tanpa Foto",
     price: 100000,
     image: "../gambar/tanpa-foto-tema-6.png",
