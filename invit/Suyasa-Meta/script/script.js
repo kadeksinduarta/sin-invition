@@ -45,18 +45,26 @@ function autoplaySlider() {
 function enableScroll() {
   jQuery("#enable-scroll").on("click", function (e) {
     e.preventDefault();
+
+    // Hilangkan scroll lock
     jQuery("body").css("overflow-y", "auto");
     jQuery("html").css("overscroll-behavior-y", "auto");
-    jQuery(".halaman-utama").css("position", "relative");
+
+    // Mainkan musik
     jQuery("#musicBackground")[0].play();
     isPlaying = true;
     jQuery(".audio-icon").css("display", "block");
 
-    jQuery("html, body").animate(
+    // Animasikan .halaman-utama agar naik ke atas dan menghilang
+    jQuery(".halaman-utama").animate(
       {
-        scrollTop: $("#invitation").offset().top,
+        top: "-100%",
+        opacity: 0,
       },
-      1000
+      500,
+      function () {
+        jQuery(this).hide(); // Setelah animasi selesai, sembunyikan elemen
+      }
     );
 
     isFirstLoaded = false;
