@@ -54,7 +54,7 @@ body {
   height: 100vh;
   width: 100%;
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   color: #525252;
   text-align: center;
   display: flex;
@@ -67,7 +67,9 @@ body {
 
 .full-container .halaman-utamas .informasis {
   border-radius: 30px;
-  width: 80%;
+  width: 85%;
+  height: 70%;
+  padding: 15px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -120,8 +122,21 @@ body {
 }
 
 .full-container .halaman-utamas h1 {
-  padding: 50px 0;
+  padding: 30px 0;
+  font-family: var(--font-heandwriting-2);
   font-size: 30px;
+}
+
+.full-container .halaman-utamas hr {
+  border: none;
+  height: 2px;
+  color: #333;
+  width: 70%;
+  background-color: #333;
+}
+
+.full-container .halaman-utamas .tanggal {
+  padding: 10px 0;
 }
 
 .full-container .halaman-utama h3 {
@@ -193,6 +208,9 @@ body {
   text-align: center;
   background-color: #fffbf9;
   padding: 30px 0;
+  background-image: url(../images/gallery/bg2.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
 .full-container .galeri h1.title,
