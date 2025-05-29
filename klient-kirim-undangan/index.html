@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>kirim link</title>
+    <title>Klient Kirim Undangan</title>
     <link rel="stylesheet" href="style.css" />
 
     <!-- font -->
@@ -17,16 +17,16 @@
       </div>
       <div class="form-input-output">
         <div class="input">
+          <label for="nama-mempelai">Nama Mempelai</label> <br />
+          <input type="text" name="nama-mempelai" id="nama-mempelai" autocomplete="off" /> <br />
+          <br />
+          <label for="nama-tamu">Nama Tamu</label> <br />
+          <input type="text" name="nama-tamu" id="nama-tamu" autocomplete="off" /> <br />
+          <br />
           <label for="link">Link</label> <br />
           <input type="text" name="link" id="link" autocomplete="off" /><br />
           <br />
-          <label for="nama-mempelai">Nama mempelai</label> <br />
-          <input type="text" name="nama-mempelai" id="nama-mempelai" autocomplete="off"/> <br /><br />
-          <label for="RSVP">RSVP</label> <br />
-          <input type="text" name="RSVP" id="RSVP" autocomplete="off"  />
-          <br />
-          <br />
-          <button onclick="tampilkanLinkUndangan()" class="kirim">Kirim</button><br /><br />
+          <button onclick="tampilkanLinkUndangan()" class="kirim">Kirim</button>
           <br />
         </div>
         <div class="output">
@@ -37,10 +37,6 @@
           <br />
           <textarea name="link-undangan" id="link-undangan"></textarea>
           <button onclick="salinTextUndangan()">Salin</button><br /><br />
-          <textarea name="link-tutor" id="link-tutor"></textarea> <br />
-          <button onclick="salinTextTuror()">Salin</button><br /><br />
-          <textarea name="link-rsvp" id="link-rsvp"> </textarea> <br />
-          <button onclick="salinTextRsvp()">Salin</button><br />
         </div>
       </div>
     </div>
