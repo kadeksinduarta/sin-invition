@@ -98,23 +98,54 @@
       </form>
     </div>
 
+    <script src="/js/form-hendler.js"></script>
+
     <script>
-      window.addEventListener("load", function () {
+      document.addEventListener("DOMContentLoaded", function () {
         const form = document.getElementById("my-form");
+        const submitButton = document.getElementById("submit");
+
+        // Load saved values from localStorage
+        form.querySelectorAll("input, textarea, select").forEach((el) => {
+          const savedValue = localStorage.getItem(el.name);
+          if (savedValue !== null) {
+            el.value = savedValue;
+          }
+
+          // Save each field's value on change
+          el.addEventListener("input", () => {
+            localStorage.setItem(el.name, el.value);
+          });
+        });
+
+        // Submit handler
         form.addEventListener("submit", function (e) {
           e.preventDefault();
-          document.getElementById("submit").innerText = "Sedang Mengirim...";
+          submitButton.innerText = "Sedang Mengirim...";
           const data = new FormData(form);
           const action = e.target.action;
+
           fetch(action, {
             method: "POST",
             body: data,
-          }).then(() => {
-            document.getElementById("submit").innerText = "Kirim Ucapan";
-            window.location.href = "selesai-data.html";
-            alert("Data Kamu sudah Di Kirim");
-            form.reset();
-          });
+          })
+            .then(() => {
+              submitButton.innerText = "Kirim Ucapan";
+              alert("Data Kamu sudah Di Kirim");
+
+              // Clear form and localStorage
+              form.reset();
+              form.querySelectorAll("input, textarea, select").forEach((el) => {
+                localStorage.removeItem(el.name);
+              });
+
+              window.location.href = "selesai-data.html";
+            })
+            .catch((err) => {
+              submitButton.innerText = "Kirim Data";
+              alert("Terjadi kesalahan saat mengirim data. Silakan coba lagi.");
+              console.error(err);
+            });
         });
       });
     </script>

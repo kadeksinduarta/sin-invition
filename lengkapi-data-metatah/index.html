@@ -104,19 +104,41 @@
     <script>
       window.addEventListener("load", function () {
         const form = document.getElementById("my-form");
+        const submitButton = document.getElementById("submit");
+
+        // Muat data dari localStorage
+        form.querySelectorAll("input, textarea, select").forEach((el) => {
+          const savedValue = localStorage.getItem(el.name);
+          if (savedValue !== null) el.value = savedValue;
+        });
+
+        // Simpan perubahan ke localStorage setiap input berubah
+        form.querySelectorAll("input, textarea, select").forEach((el) => {
+          el.addEventListener("input", () => {
+            localStorage.setItem(el.name, el.value);
+          });
+        });
+
+        // Tangani submit form
         form.addEventListener("submit", function (e) {
           e.preventDefault();
-          document.getElementById("submit").innerText = "Sedang Mengirim...";
+          submitButton.innerText = "Sedang Mengirim...";
           const data = new FormData(form);
           const action = e.target.action;
+
           fetch(action, {
             method: "POST",
             body: data,
           }).then(() => {
-            document.getElementById("submit").innerText = "Kirim Ucapan";
-            window.location.href = "../Lengkapi-data/selesai-data.html";
-            alert("Data Kamu sudah Di Kirim");
+            // Bersihkan localStorage
+            form.querySelectorAll("input, textarea, select").forEach((el) => {
+              localStorage.removeItem(el.name);
+            });
+
             form.reset();
+            submitButton.innerText = "Kirim Ucapan";
+            alert("Data Kamu sudah Di Kirim");
+            window.location.href = "../Lengkapi-data/selesai-data.html";
           });
         });
       });
